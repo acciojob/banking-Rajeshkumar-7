@@ -33,7 +33,8 @@ public class CurrentAccount extends BankAccount{
         }
 
         for(int i=0;i<26;i++){
-            pq.add(new Pair((char)(i + 'A') , freq[i]));
+            if(freq[i] != 0)
+                pq.add(new Pair((char)(i + 'A') , freq[i]));
         }
 
         StringBuilder sb = new StringBuilder();
@@ -83,7 +84,7 @@ public class CurrentAccount extends BankAccount{
     }
 
     public String getTradeLicenseId() {
-        return tradeLicenseId;
+        return this.tradeLicenseId;
     }
 
     public void setTradeLicenseId(String tradeLicenseId) {
